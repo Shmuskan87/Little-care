@@ -883,6 +883,67 @@ body .quick-actions a[href*="wa.me"] {
   background: #fff;
 }
 
+/* Interactive FAQ accordion. */
+.faq-list {
+  border-top: 0;
+}
+
+.faq-item {
+  margin-bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--c-border);
+  border-radius: 16px;
+  transition: background 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.faq-item:hover,
+.faq-item.is-open {
+  background: #fff;
+  border-color: var(--c-primary);
+  box-shadow: 0 10px 24px rgba(var(--c-primary-rgb), 0.08);
+}
+
+.faq-question {
+  padding: 1.15rem 1.35rem;
+}
+
+.faq-question svg {
+  flex: none;
+  color: var(--c-primary);
+  transition: transform 250ms ease, color 250ms ease;
+}
+
+.faq-item.is-open .faq-question {
+  color: var(--c-primary);
+}
+
+.faq-item.is-open .faq-question svg {
+  color: var(--c-accent);
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.35rem;
+  opacity: 0;
+  transition: max-height 260ms ease, opacity 220ms ease, padding 260ms ease;
+}
+
+.faq-item.is-open .faq-answer {
+  max-height: 180px;
+  padding: 0 1.35rem 1.2rem;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item,
+  .faq-question svg,
+  .faq-answer {
+    transition: none;
+  }
+}
+
 /* Appointment section: compact form, clear steps and focused states. */
 .appointment {
   background: linear-gradient(180deg, var(--c-bg), var(--c-soft));
