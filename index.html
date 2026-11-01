@@ -463,22 +463,65 @@
     </main>
 
     <footer class="site-footer" id="bottom">
-        <div class="container footer-layout">
-            <div>
-                <a class="brand brand-footer" href="#top">Little Care</a>
-                <p>A fictional pediatrician website for demonstration purposes.</p>
+        <span class="footer-spark footer-spark-one" aria-hidden="true">✦</span>
+        <span class="footer-spark footer-spark-two" aria-hidden="true">✦</span>
+        <div class="container footer-grid">
+            <div class="footer-brand-column">
+                <a class="brand brand-footer" href="#top" aria-label="Little Care home">
+                    <span class="brand-mark" aria-hidden="true">✦</span>
+                    <span class="brand-name">Little Care</span>
+                </a>
+                <p>Gentle, family-focused pediatric care that helps every little one grow with confidence.</p>
+                <p class="footer-demo-note">Demo content for a student portfolio project.</p>
+                <div class="footer-socials" aria-label="Social media links">
+                    <a href="#contact" aria-label="Facebook"><i data-lucide="facebook" aria-hidden="true"></i></a>
+                    <a href="#contact" aria-label="Instagram"><i data-lucide="instagram" aria-hidden="true"></i></a>
+                    <a href="#contact" aria-label="YouTube"><i data-lucide="youtube" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <nav aria-label="Footer navigation">
+
+            <nav class="footer-column" aria-label="Quick links">
+                <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#testimonials">Parent stories</a></li>
                     <li><a href="#faq">FAQs</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blog">Parent resources</a></li>
+                    <li><a href="#appointment">Book a visit</a></li>
                 </ul>
             </nav>
+
+            <nav class="footer-column" aria-label="Care services">
+                <h3>Care Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#expertise">Well-child visits</a></li>
+                    <li><a href="#expertise">Preventive care</a></li>
+                    <li><a href="#expertise">Newborn support</a></li>
+                    <li><a href="#conditions">Everyday concerns</a></li>
+                    <li><a href="#appointment">Appointment support</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-column footer-contact-column">
+                <h3>Contact Us</h3>
+                <p>Little Care Pediatric Clinic<br />123 Sunshine Lane,<br />Your City, India.</p>
+                <a class="footer-contact-item" href="mailto:hello@example.com">
+                    <i data-lucide="mail" aria-hidden="true"></i> hello@example.com
+                </a>
+                <a class="footer-contact-item" href="tel:+10000000000">
+                    <i data-lucide="phone" aria-hidden="true"></i> (000) 000-0000
+                </a>
+                <a class="footer-contact-button" href="#appointment">Request a visit <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+            </div>
         </div>
         <div class="container footer-bottom">
             <p>© 2026 Little Care. Demo content only.</p>
-            <a href="#top">Back to top</a>
+            <div>
+                <a href="#top">Back to top ↑</a>
+                <span aria-hidden="true"> · </span>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
     </footer>
 

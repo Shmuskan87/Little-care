@@ -134,10 +134,20 @@
     padding: 1.35rem;
   }
 
-  .footer-layout,
+  .footer-grid,
   .footer-bottom {
     display: grid;
     justify-content: start;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1.25rem;
+  }
+
+  .footer-brand-column,
+  .footer-contact-column {
+    grid-column: 1 / -1;
   }
 
   .footer-links {
@@ -188,6 +198,10 @@
 
   .testimonial-slider {
     padding: 2rem 1.15rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 
   .quick-actions a,
