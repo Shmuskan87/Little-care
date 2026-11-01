@@ -29,9 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const header = document.querySelector(".site-header");
+  const pageScrollControls = document.querySelector(".page-scroll-controls");
   if (header) {
     const updateHeaderShadow = () => {
-      header.classList.toggle("is-scrolled", window.scrollY > 10);
+      const hasScrolled = window.scrollY > 10;
+      header.classList.toggle("is-scrolled", hasScrolled);
+      pageScrollControls?.classList.toggle("is-visible", window.scrollY > 420);
     };
     updateHeaderShadow();
     window.addEventListener("scroll", updateHeaderShadow, { passive: true });

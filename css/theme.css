@@ -221,3 +221,74 @@ p {
   color: var(--c-ink);
   background: var(--c-accent);
 }
+
+/* Hero background: soft glows, subtle dots and a designed wave into the stats strip. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 7rem;
+  background:
+    radial-gradient(55% 55% at 6% 0%, rgba(14, 107, 102, 0.16) 0%, transparent 70%),
+    radial-gradient(45% 50% at 96% 95%, rgba(244, 166, 42, 0.2) 0%, transparent 70%),
+    var(--c-bg);
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  content: "";
+  background: radial-gradient(circle, rgba(14, 107, 102, 0.18) 1.2px, transparent 1.4px) 0 0 / 24px 24px;
+  filter: none;
+  opacity: 1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 70%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 70%);
+  animation: none;
+}
+
+.hero::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  z-index: 0;
+  width: auto;
+  height: 90px;
+  border-radius: 0;
+  content: "";
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 90' preserveAspectRatio='none'%3E%3Cpath fill='%230e6b66' d='M0,40 C240,90 480,0 720,30 C960,60 1200,90 1440,40 L1440,90 L0,90 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  filter: none;
+  opacity: 1;
+  pointer-events: none;
+  animation: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keep the utility control quiet until the visitor has moved down the page. */
+.page-scroll-controls {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.5rem);
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+
+.page-scroll-controls.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-scroll-controls {
+    transition: none;
+    transform: none;
+  }
+}
