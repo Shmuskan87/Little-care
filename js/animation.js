@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const revealTargets = document.querySelectorAll(
     ".section-heading, .split-layout > *, .clinic-layout > *, .appointment-layout > *, " +
       ".contact-layout > *, .info-card, .benefit-card, .blog-card, .faq-item, " +
-      "main p:not(.eyebrow), .site-footer p"
+      "main p:not(.eyebrow), .site-footer p, .steps li"
   );
 
   if (!prefersReducedMotion && "IntersectionObserver" in window) {
