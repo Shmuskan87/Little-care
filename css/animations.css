@@ -1,0 +1,216 @@
+/* Large blue circle in the hero background */
+@keyframes move-blue-circle {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(25px, 20px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Large peach circle in the hero background */
+@keyframes move-peach-circle {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-25px, -20px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Small decorative circles */
+@keyframes float-small-circle {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero::before {
+  animation: move-blue-circle 5s ease-in-out infinite;
+}
+
+.hero::after {
+  animation: move-peach-circle 6s ease-in-out infinite;
+}
+
+.decorative-shape-one {
+  animation: float-small-circle 3.5s ease-in-out infinite;
+}
+
+.decorative-shape-two {
+  animation: float-small-circle 4s ease-in-out infinite reverse;
+}
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-card {
+  animation: card-rise 700ms ease both;
+}
+
+.info-card:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+.info-card:nth-child(2) {
+  animation-delay: 250ms;
+}
+
+.info-card:nth-child(3) {
+  animation-delay: 400ms;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+}
+
+.info-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Animista: tracking-in-contract-bck */
+.tracking-in-contract-bck {
+  -webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+@-webkit-keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+    transform: translateZ(400px);
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  100% {
+    letter-spacing: normal;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    transform: translateZ(400px);
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  100% {
+    letter-spacing: normal;
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tracking-in-contract-bck {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
+
+/* Outer-line pop effect for the blog cards */
+.box-shadow-pop-br {
+  -webkit-animation: box-shadow-pop-br 0.6s both;
+  animation: box-shadow-pop-br 0.6s both;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.box-shadow-pop-br:hover {
+  box-shadow: 0 16px 30px rgba(1, 28, 64, 0.14), 0 0 0 4px var(--color-blue);
+  transform: translateY(-8px);
+}
+
+.box-shadow-pop-br:hover .image-placeholder-blog {
+  transform: scale(1.04);
+}
+
+.image-placeholder-blog {
+  transition: transform 400ms ease;
+}
+
+/* Shared hover effect for cards and visual boxes */
+.box-hover-effect {
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.box-hover-effect:hover {
+  box-shadow: 0 16px 30px rgba(1, 28, 64, 0.14), 0 0 0 3px var(--color-blue);
+  transform: translateY(-8px);
+}
+
+.box-hover-effect:hover .image-placeholder-blog {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .box-hover-effect,
+  .box-hover-effect:hover,
+  .box-hover-effect:hover .image-placeholder-blog {
+    transition: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes box-shadow-pop-br {
+  0% {
+    box-shadow: 0 0 0 0 rgba(38, 101, 140, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 4px var(--color-blue);
+  }
+}
+
+@keyframes box-shadow-pop-br {
+  0% {
+    box-shadow: 0 0 0 0 rgba(38, 101, 140, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 4px var(--color-blue);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .box-shadow-pop-br {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
