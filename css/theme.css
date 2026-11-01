@@ -1066,3 +1066,15 @@ body .quick-actions a[href*="wa.me"] {
   font-weight: 600;
   animation: error-in 400ms ease both;
 }
+
+/* Keep the appointment section dark after the form styling block above. */
+.appointment {
+  background: var(--grad-deep);
+}
+
+.appointment .appointment-copy h2,
+.appointment .appointment-copy > p,
+.appointment .steps strong,
+.appointment .steps div span {
+  color: #fff;
+}
