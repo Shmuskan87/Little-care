@@ -691,3 +691,57 @@ body .quick-actions a[href*="wa.me"] {
     transform: none;
   }
 }
+
+/* Rotating trust seal for the About section. */
+.spin-badge {
+  position: absolute;
+  top: 24px;
+  right: -36px;
+  z-index: 2;
+  display: grid;
+  width: 120px;
+  height: 120px;
+  place-items: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 12px 30px rgba(var(--c-primary-rgb), 0.18);
+}
+
+.spin-badge svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin 18s linear infinite;
+}
+
+.spin-badge text {
+  fill: var(--c-primary);
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+.spin-badge > svg + svg,
+.spin-badge > i {
+  width: 34px;
+  height: 34px;
+  color: var(--c-accent);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 700px) {
+  .spin-badge {
+    right: 8px;
+    width: 96px;
+    height: 96px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin-badge svg {
+    animation: none;
+  }
+}

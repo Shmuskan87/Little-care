@@ -60,22 +60,47 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-  document.querySelectorAll("[data-counter]").forEach((counter) => {
-    const target = Number(counter.dataset.counter);
+  const easeOut = (value) => 1 - Math.pow(1 - value, 3);
+
+  const runCounter = (counter) => {
+    const raw = counter.dataset.counter;
+    const target = Number.parseFloat(raw);
+    const decimals = (raw.split(".")[1] || "").length;
+
     if (prefersReducedMotion) {
-      counter.textContent = target % 1 !== 0 ? target.toFixed(1) : target.toLocaleString();
+      counter.textContent = decimals
+        ? target.toFixed(decimals)
+        : target.toLocaleString("en-IN");
       return;
     }
 
-    const duration = 1200;
+    const duration = 1800;
     const startedAt = performance.now();
-    const updateCounter = (now) => {
+    const frame = (now) => {
       const progress = Math.min((now - startedAt) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const value = target * eased;
-      counter.textContent = target % 1 !== 0 ? value.toFixed(1) : Math.floor(value).toLocaleString();
-      if (progress < 1) requestAnimationFrame(updateCounter);
+      const value = target * easeOut(progress);
+      counter.textContent = decimals
+        ? value.toFixed(decimals)
+        : Math.round(value).toLocaleString("en-IN");
+      if (progress < 1) requestAnimationFrame(frame);
     };
-    requestAnimationFrame(updateCounter);
-  });
+    requestAnimationFrame(frame);
+  };
+
+  const counters = document.querySelectorAll("[data-counter]");
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    counters.forEach(runCounter);
+  } else {
+    const counterObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          runCounter(entry.target);
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.6 }
+    );
+    counters.forEach((counter) => counterObserver.observe(counter));
+  }
 });
