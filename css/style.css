@@ -1092,6 +1092,23 @@ p {
   transition: color var(--transition), background var(--transition), transform var(--transition);
 }
 
+.footer-socials a span {
+  display: inline-grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.footer-socials a:nth-child(2) span {
+  font-size: 1.55rem;
+}
+
+.footer-socials a:nth-child(3) span {
+  font-size: 0.95rem;
+}
+
 .footer-socials a:hover,
 .footer-socials a:focus-visible {
   color: var(--color-white);
@@ -1119,6 +1136,15 @@ p {
   margin-top: 0.75rem;
   color: rgba(255, 255, 255, 0.86);
   font-size: 0.9rem;
+}
+
+.footer-text-icon {
+  display: inline-grid;
+  width: 1.1rem;
+  place-items: center;
+  color: var(--color-sky);
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
 .footer-contact-item:hover {
