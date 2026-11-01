@@ -64,6 +64,40 @@
   animation: hero-copy-in 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Professional scroll reveal: only opacity and transform are animated. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms ease var(--delay, 0ms),
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-copy > * {
+  animation: fade-up 800ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-copy > :nth-child(1) { animation-delay: 50ms; }
+.hero-copy > :nth-child(2) { animation-delay: 150ms; }
+.hero-copy > :nth-child(3) { animation-delay: 250ms; }
+.hero-copy > :nth-child(4) { animation-delay: 350ms; }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-visual {
   animation: hero-visual-in 950ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -151,6 +185,42 @@
 .button:hover::after,
 .button:focus-visible::after {
   animation: button-shine 650ms ease;
+}
+
+.nav-list a:not(.button) {
+  position: relative;
+}
+
+.nav-list a:not(.button)::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.35rem;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--c-accent, #f4a62a);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease;
+}
+
+.nav-list a:not(.button):hover::after,
+.nav-list a:not(.button):focus-visible::after {
+  transform: scaleX(1);
+}
+
+.site-header {
+  transition: box-shadow 300ms ease;
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 4px 20px rgba(14, 107, 102, 0.12);
+}
+
+/* The scroll reveal replaces the older letter-spacing effect. */
+.tracking-in-contract-bck {
+  animation: none;
+  transform: none;
 }
 
 @keyframes button-shine {
@@ -261,6 +331,13 @@
   .hero-trust span,
   .button::after {
     animation: none;
+  }
+
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .tracking-in-contract-bck {
