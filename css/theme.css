@@ -75,6 +75,7 @@ p {
 
 .button-secondary {
   color: var(--c-primary);
+  background: transparent;
   border-color: var(--c-primary);
 }
 
