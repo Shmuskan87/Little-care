@@ -1,0 +1,222 @@
+:root {
+  --c-primary: #0e6b66;
+  --c-primary-dark: #0a4f4b;
+  --c-accent: #f4a62a;
+  --c-bg: #fffdf8;
+  --c-soft: #eaf4f1;
+  --c-warm: #fff1dc;
+  --c-ink: #1f2a2e;
+  --c-muted: #5b6b70;
+  --c-border: #dce8e5;
+  --theme-radius: 16px;
+}
+
+body {
+  color: var(--c-ink);
+  background: var(--c-bg);
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--c-ink);
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--c-muted);
+}
+
+.utility-bar {
+  background: var(--c-primary-dark);
+}
+
+.utility-bar a,
+.utility-bar span {
+  color: #fff;
+}
+
+.site-header {
+  background: rgba(255, 253, 248, 0.95);
+  border-bottom-color: var(--c-border);
+}
+
+.brand-name {
+  color: var(--c-primary);
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.brand-mark {
+  color: var(--c-accent);
+  background: #d9f0eb;
+}
+
+.nav-list a:not(.button) {
+  color: var(--c-ink);
+}
+
+.nav-list a:not(.button):hover,
+.footer-links a:hover,
+.text-link:hover {
+  color: var(--c-primary);
+}
+
+.button {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+}
+
+.button:hover {
+  background: var(--c-primary-dark);
+  border-color: var(--c-primary-dark);
+}
+
+.button-secondary {
+  color: var(--c-primary);
+  border-color: var(--c-primary);
+}
+
+.button-secondary:hover {
+  color: #fff;
+  background: var(--c-primary);
+}
+
+:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+.eyebrow,
+.text-link,
+.card-meta {
+  color: var(--c-primary);
+}
+
+.hero {
+  background: linear-gradient(180deg, var(--c-soft) 0%, var(--c-bg) 100%);
+}
+
+.hero-trust span {
+  color: var(--c-primary-dark);
+}
+
+.decorative-shape-one {
+  background: var(--c-accent);
+  opacity: 0.38;
+}
+
+.decorative-shape-two {
+  background: var(--c-primary);
+  opacity: 0.16;
+}
+
+.trust-stats {
+  background: var(--c-primary);
+}
+
+.stat-item,
+.stat-item strong,
+.stat-item > span {
+  color: #fff;
+}
+
+.section-soft,
+.section-lavender {
+  background: var(--c-soft);
+}
+
+.section-peach {
+  background: var(--c-warm);
+}
+
+.info-card,
+.benefit-card,
+.blog-card,
+.appointment-form,
+.contact-details,
+.testimonial-slider {
+  border-color: var(--c-border);
+  border-radius: var(--theme-radius);
+  box-shadow: 0 6px 20px rgba(14, 107, 102, 0.07);
+}
+
+.card-icon {
+  color: var(--c-primary);
+}
+
+.faq-item {
+  border-bottom-color: var(--c-border);
+}
+
+.faq-question:hover {
+  color: var(--c-primary);
+}
+
+.slider-button {
+  color: #fff;
+  background: var(--c-primary);
+}
+
+.slider-dot {
+  background: var(--c-border);
+}
+
+.slider-dot.is-active {
+  background: var(--c-accent);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: #fff;
+  border: 1.5px solid var(--c-border);
+  border-radius: 12px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--c-primary);
+  outline: 3px solid rgba(14, 107, 102, 0.18);
+}
+
+.site-footer {
+  color: #d7ebe8;
+  background: var(--c-primary-dark);
+}
+
+.site-footer h3,
+.site-footer .brand-name {
+  color: #fff;
+}
+
+.site-footer p,
+.site-footer a {
+  color: #d7ebe8;
+}
+
+.site-footer a:hover {
+  color: var(--c-accent);
+}
+
+.footer-spark {
+  color: rgba(244, 166, 42, 0.14);
+}
+
+.footer-contact-button {
+  color: var(--c-ink);
+  background: var(--c-accent);
+}
+
+.quick-actions a,
+.page-scroll-button {
+  background: var(--c-primary);
+}
+
+.quick-actions a:hover,
+.page-scroll-button:hover {
+  color: var(--c-ink);
+  background: var(--c-accent);
+}
