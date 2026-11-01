@@ -1,20 +1,20 @@
 :root {
-  --color-navy: #2b1e3f;   /* Deep plum for the footer and headings */
-  --color-deep-blue: #5b4b8a;  /* Indigo-purple buttons and important elements */
-  --color-blue: #e76f51; /* Coral links, labels, and accents */
-  --color-sky: #ffd166; /* Sunshine yellow highlight */
-  --color-cream: #fff8f0; /* Warm website background */
+  --color-navy: #123b5d;   /* Deep blue for the footer and headings */
+  --color-deep-blue: #087ea4;  /* Aqua-blue buttons and important elements */
+  --color-blue: #119dcc; /* Bright cyan links, labels, and accents */
+  --color-sky: #33ccff; /* Cyan highlight from the reference palette */
+  --color-cream: #fffafa; /* Soft white-pink website background */
   --color-white: #ffffff; /* Cards, forms, and clean surfaces */
-  --color-peach: #ff8fab; /* Playful pink decorative accent */
-  --color-peach-soft: #fff0f4; /* Soft pink section background */
-  --color-lavender: #e8e0ff; /* Lavender section background */
-  --color-sage: #d8f3dc; /* Fresh mint section color */
-  --color-text: #293241; /* Normal paragraph text */
-  --color-muted: #5c677d; /* Less important paragraph text */
-  --color-border: #e8dff0; /* Input and card borders */
+  --color-peach: #ffcccc; /* Soft blush accent from the reference palette */
+  --color-peach-soft: #fff1f1; /* Soft blush section background */
+  --color-lavender: #e8f8fc; /* Pale aqua section background */
+  --color-sage: #dff7f4; /* Fresh mint section color */
+  --color-text: #18344d; /* Normal paragraph text */
+  --color-muted: #5e7181; /* Less important paragraph text */
+  --color-border: #c2dce8; /* Input and card borders */
   --color-error: #b33a3a; /* Form error messages */
-  --shadow-soft: 0 18px 45px rgba(43, 30, 63, 0.14); /* Soft shadow for large sections */
-  --shadow-card: 0 10px 28px rgba(43, 30, 63, 0.1); /* Smaller shadow for cards */
+  --shadow-soft: 0 18px 45px rgba(18, 59, 93, 0.12); /* Soft shadow for large sections */
+  --shadow-card: 0 10px 28px rgba(18, 59, 93, 0.09); /* Smaller shadow for cards */
   --radius-small: 0.75rem; /* Small rounded corners */
   --radius-medium: 1.25rem; /* Medium rounded corners*/
   --radius-large: 2rem; /* Large rounded corners */
@@ -155,7 +155,7 @@ button {
 }
 
 .section-soft {
-  background: #f4efff;
+  background: #effbfe;
 }
 
 .section-lavender {
@@ -350,7 +350,7 @@ p {
   position: relative;
   overflow: hidden;
   padding: 7rem 0 6.5rem;
-  background: linear-gradient(135deg, #fff1c9 0%, var(--color-cream) 48%, #ffe0ea 100%);
+  background: linear-gradient(135deg, #e2f9ff 0%, var(--color-cream) 48%, #ffebeb 100%);
 }
 
 .hero::before,
@@ -497,7 +497,7 @@ p {
   position: absolute;
   inset: 1rem 0 0 2rem;
   min-height: 29rem;
-  background: linear-gradient(160deg, #e5dcff, #ffd6df);
+  background: linear-gradient(160deg, #d8f6ff, #ffdddd);
   border: 0;
   border-radius: 45% 45% 1.75rem 1.75rem;
   box-shadow: var(--shadow-soft);
@@ -1017,7 +1017,7 @@ p {
   overflow: hidden;
   padding: 3.5rem 0 1.25rem;
   color: rgba(255, 255, 255, 0.8);
-  background: linear-gradient(135deg, var(--color-navy), #49336d);
+  background: linear-gradient(135deg, var(--color-navy), #087ea4);
 }
 
 .footer-grid {
