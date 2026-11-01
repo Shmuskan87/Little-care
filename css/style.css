@@ -90,7 +90,7 @@ body {
 
 img {
     display: block;
-    max-weight: 100%;
+    max-width: 100%;
 }
 
 a {
@@ -117,6 +117,33 @@ button {
 .container {
   width: min(100% - 3rem, var(--container-width));
   margin-inline: auto;
+}
+
+.utility-bar {
+  color: var(--color-white);
+  background: var(--color-navy);
+  font-size: 0.82rem;
+}
+
+.utility-bar-content {
+  display: flex;
+  min-height: 2.35rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.utility-bar span,
+.utility-bar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.utility-bar svg {
+  width: 0.95rem;
+  height: 0.95rem;
 }
 
 .narrow-container {
@@ -372,6 +399,67 @@ p {
   gap: 1.25rem;
 }
 
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.hero-trust span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--color-deep-blue);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(38, 101, 140, 0.13);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.hero-trust svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.trust-stats {
+  padding: 2.2rem 0;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+.stat-item {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.stat-item:last-child {
+  border-right: 0;
+}
+
+.stat-item strong {
+  color: var(--color-deep-blue);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  line-height: 1;
+}
+
+.stat-item > span {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
 .hero-visual {
   position: relative;
   min-height: 31rem;
@@ -552,6 +640,10 @@ p {
 .info-card,
 .benefit-card {
   padding: 2rem;
+}
+
+.benefit-card .card-icon {
+  margin-bottom: 1.1rem;
 }
 
 .info-card {
@@ -968,6 +1060,45 @@ p {
   color: var(--color-white);
 }
 
+.quick-actions {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 20;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.quick-actions a {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  color: var(--color-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.quick-actions a:first-child {
+  background: var(--color-deep-blue);
+}
+
+.quick-actions a:last-child {
+  background: #25d366;
+}
+
+.quick-actions a:hover,
+.quick-actions a:focus-visible {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-3px) scale(1.04);
+}
+
+.quick-actions svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
 /* This small rule keeps the page usable before responsive.css is added. */
 @media (max-width: 900px) {
   .nav-list {
@@ -980,6 +1111,47 @@ p {
   .appointment-layout,
   .contact-layout {
     gap: 3rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .utility-bar-content {
+    justify-content: center;
+    min-height: 2.7rem;
+    text-align: center;
+  }
+
+  .utility-bar span {
+    display: none;
+  }
+
+  .hero-trust {
+    gap: 0.45rem;
+  }
+
+  .hero-trust span {
+    font-size: 0.7rem;
+  }
+
+  .stats-grid {
+    gap: 0.7rem 0;
+  }
+
+  .stat-item {
+    padding: 0.5rem;
+  }
+
+  .quick-actions {
+    bottom: 0.85rem;
+    left: 0.85rem;
   }
 }
 

@@ -157,6 +157,18 @@
   transform: translateY(-8px);
 }
 
+/* Gentle section reveal inspired by modern clinic landing pages. */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .box-shadow-pop-br:hover .image-placeholder-blog {
   transform: scale(1.04);
 }
@@ -209,6 +221,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .box-shadow-pop-br {
     -webkit-animation: none;
     animation: none;
