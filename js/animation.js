@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ".about, .expertise, .conditions, .why-choose, .clinic, .testimonials, .faq, .blog, .appointment, .contact"
   );
 
+  const paragraphItems = document.querySelectorAll(
+    "main p:not(.eyebrow), .site-footer p"
+  );
+
   if ("IntersectionObserver" in window) {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -19,6 +23,24 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((item) => {
       item.classList.add("scroll-reveal");
       revealObserver.observe(item);
+    });
+
+    const paragraphObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    paragraphItems.forEach((paragraph, index) => {
+      paragraph.classList.add("paragraph-reveal");
+      paragraph.style.setProperty("--paragraph-delay", `${Math.min(index * 35, 280)}ms`);
+      paragraphObserver.observe(paragraph);
     });
   }
 
