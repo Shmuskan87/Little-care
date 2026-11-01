@@ -1,0 +1,204 @@
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 2rem, var(--container-width));
+  }
+
+  .site-nav {
+    position: relative;
+    min-height: 4.5rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 0;
+    left: 0;
+    display: grid;
+    gap: 0;
+    padding: 0.65rem;
+    background: rgba(255, 250, 244, 0.98);
+    border: 1px solid var(--color-border);
+    border-top: 0;
+    border-radius: 0 0 var(--radius-medium) var(--radius-medium);
+    box-shadow: var(--shadow-soft);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.5rem);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  .nav-list.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .nav-list a:not(.button) {
+    display: block;
+    padding: 0.8rem 0.75rem;
+    border-radius: var(--radius-small);
+  }
+
+  .nav-list a:not(.button):hover {
+    background: rgba(167, 235, 242, 0.28);
+  }
+
+  .nav-list .button {
+    width: 100%;
+    margin-top: 0.35rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .hero {
+    padding: 4rem 0 3.5rem;
+  }
+
+  .hero-content,
+  .split-layout,
+  .clinic-layout,
+  .appointment-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-copy h1,
+  .hero-intro {
+    margin-inline: auto;
+  }
+
+  .hero-actions,
+  .hero-trust {
+    justify-content: center;
+  }
+
+  .hero-actions .button {
+    flex: 1 1 12rem;
+  }
+
+  .hero-visual {
+    min-height: 23rem;
+  }
+
+  .image-placeholder-hero {
+    inset: 0 1rem 0 1rem;
+    min-height: 22rem;
+  }
+
+  .section-heading-inline {
+    display: grid;
+    align-items: start;
+  }
+
+  .section-heading-inline .text-link {
+    justify-self: start;
+  }
+
+  .expertise-grid,
+  .benefits-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split-layout-reverse .section-copy,
+  .split-layout-reverse .section-media {
+    order: initial;
+  }
+
+  .section-media,
+  .image-placeholder-doctor,
+  .image-placeholder-family {
+    min-height: 19rem;
+  }
+
+  .clinic-map {
+    min-height: 19rem;
+  }
+
+  .appointment-form {
+    padding: 1.35rem;
+  }
+
+  .footer-layout,
+  .footer-bottom {
+    display: grid;
+    justify-content: start;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 0.8rem 1.2rem;
+  }
+
+  .page-scroll-controls {
+    right: 0.8rem;
+    bottom: 0.8rem;
+  }
+
+  .quick-actions {
+    left: 0.8rem;
+    bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: clamp(2.25rem, 12vw, 3.1rem);
+  }
+
+  h2 {
+    font-size: clamp(1.85rem, 10vw, 2.5rem);
+  }
+
+  .hero-trust span {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    display: grid;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-item {
+    border-right: 0;
+  }
+
+  .testimonial-slider {
+    padding: 2rem 1.15rem;
+  }
+
+  .quick-actions a,
+  .page-scroll-button {
+    width: 2.55rem;
+    height: 2.55rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-list {
+    transition: none;
+  }
+}
