@@ -274,6 +274,7 @@ p {
 
 /* Keep the utility control quiet until the visitor has moved down the page. */
 .page-scroll-controls {
+  z-index: 100;
   opacity: 0;
   pointer-events: none;
   transform: translateY(0.5rem);

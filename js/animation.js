@@ -40,6 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateHeaderShadow, { passive: true });
   }
 
+  document.querySelectorAll('.page-scroll-button[href="#top"]').forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
+    });
+  });
+
   document
     .querySelectorAll(".expertise .info-card, .why-choose .benefit-card")
     .forEach((card) => {
