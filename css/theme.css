@@ -1,15 +1,15 @@
 :root {
-  --c-primary: #1f5f4a;
-  --c-primary-rgb: 31, 95, 74;
-  --c-primary-dark: #144434;
-  --c-accent: #e6b35a;
-  --c-accent-rgb: 230, 179, 90;
-  --c-bg: #fbf9f3;
-  --c-soft: #e8f1ec;
-  --c-warm: #fbefd5;
-  --c-ink: #1d2b25;
-  --c-muted: #5b6b63;
-  --c-border: #dce6df;
+  --c-primary: #1e3a5f;
+  --c-primary-rgb: 30, 58, 95;
+  --c-primary-dark: #14294a;
+  --c-accent: #ff7a59;
+  --c-accent-rgb: 255, 122, 89;
+  --c-bg: #fafbff;
+  --c-soft: #e8f0fa;
+  --c-warm: #ffede6;
+  --c-ink: #1b2433;
+  --c-muted: #5a6577;
+  --c-border: #dce4f0;
   --radius: 16px;
   --theme-radius: var(--radius);
 }
@@ -263,7 +263,7 @@ p {
   height: 90px;
   border-radius: 0;
   content: "";
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 90' preserveAspectRatio='none'%3E%3Cpath fill='%231f5f4a' d='M0,40 C240,90 480,0 720,30 C960,60 1200,90 1440,40 L1440,90 L0,90 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 90' preserveAspectRatio='none'%3E%3Cpath fill='%231e3a5f' d='M0,40 C240,90 480,0 720,30 C960,60 1200,90 1440,40 L1440,90 L0,90 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
   filter: none;
   opacity: 1;
   pointer-events: none;
