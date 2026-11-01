@@ -292,3 +292,77 @@ p {
     transform: none;
   }
 }
+
+/* Expertise and why-choose cards: replace the old cyan border treatment. */
+:is(.expertise, .why-choose) :is(.info-card, .benefit-card) {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+  transition: transform 350ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 350ms ease, border-color 350ms ease;
+}
+
+:is(.expertise, .why-choose) :is(.info-card, .benefit-card).box-hover-effect:hover {
+  border-color: var(--c-primary);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(14, 107, 102, 0.16);
+}
+
+:is(.expertise, .why-choose) :is(.info-card, .benefit-card)::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  content: "";
+  background: linear-gradient(90deg, var(--c-primary), var(--c-accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 450ms ease;
+}
+
+:is(.expertise, .why-choose) :is(.info-card, .benefit-card):hover::before {
+  transform: scaleX(1);
+}
+
+:is(.expertise, .why-choose) .card-icon {
+  width: 60px;
+  height: 60px;
+  padding: 15px;
+  color: var(--c-primary);
+  background: var(--c-soft);
+  border-radius: 16px;
+  transition: background 300ms ease, color 300ms ease,
+    transform 450ms cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+:is(.expertise, .why-choose) :is(.info-card, .benefit-card):hover .card-icon {
+  color: #fff;
+  background: var(--c-primary);
+  transform: scale(1.08) rotate(-6deg);
+}
+
+:is(.expertise, .why-choose) :is(.info-card, .benefit-card)::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(244, 166, 42, 0.16), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+:is(.expertise, .why-choose) :is(.info-card, .benefit-card):hover::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.expertise, .why-choose) :is(.info-card, .benefit-card),
+  :is(.expertise, .why-choose) .card-icon {
+    transition: none;
+  }
+
+  :is(.expertise, .why-choose) :is(.info-card, .benefit-card):hover,
+  :is(.expertise, .why-choose) :is(.info-card, .benefit-card):hover .card-icon {
+    transform: none;
+  }
+}

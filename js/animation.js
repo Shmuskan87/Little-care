@@ -40,6 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateHeaderShadow, { passive: true });
   }
 
+  document
+    .querySelectorAll(".expertise .info-card, .why-choose .benefit-card")
+    .forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+        card.style.setProperty("--my", `${event.clientY - rect.top}px`);
+      });
+    });
+
   document.querySelectorAll("[data-counter]").forEach((counter) => {
     const target = Number(counter.dataset.counter);
     if (prefersReducedMotion) {
