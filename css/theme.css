@@ -774,6 +774,14 @@ body .quick-actions a[href*="wa.me"] {
   background: linear-gradient(135deg, var(--g-1) 0%, var(--g-2) 70%, var(--g-3) 100%);
 }
 
+.testimonials .testimonial-slider {
+  border: 1px solid var(--c-border);
+}
+
+.testimonials .testimonial-slider.box-hover-effect:hover {
+  border-color: var(--c-primary);
+}
+
 /* Tighter spacing with room for content to breathe horizontally. */
 .section:not(.hero) {
   padding-block: clamp(3rem, 6vw, 5rem);

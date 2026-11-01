@@ -197,6 +197,52 @@
   }
 
   .testimonial-slider {
+    width: 100%;
+    padding: 2rem 1.25rem;
+    border-radius: var(--radius-medium);
+  }
+
+  .testimonial-slide blockquote {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    line-height: 1.35;
+  }
+
+  .testimonial-slide cite {
+    display: block;
+    padding-inline: 0.5rem;
+    font-size: 0.82rem;
+  }
+
+  .slider-controls {
+    gap: 0.7rem;
+    margin-top: 1.5rem;
+  }
+
+  .slider-button {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .slider-dots {
+    gap: 0.65rem;
+  }
+
+  .slider-dot {
+    width: 0.65rem;
+    height: 0.65rem;
+  }
+
+  .testimonials .section-heading h2 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .testimonials .section-heading .demo-note {
+    max-width: 23rem;
+    margin-inline: auto;
+    font-size: 0.82rem;
+  }
+
+  .testimonial-slider {
     padding: 2rem 1.15rem;
   }
 
