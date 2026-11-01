@@ -315,12 +315,144 @@
   transform: scale(1.04);
 }
 
+/* Richer blog-card interaction: lift, zoom and a soft light sweep. */
+.blog-card {
+  position: relative;
+  isolation: isolate;
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 350ms ease;
+}
+
+.blog-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  border-radius: inherit;
+  box-shadow: 0 0 0 1px rgba(167, 235, 242, 0.45);
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+.blog-card:hover,
+.blog-card:focus-within {
+  box-shadow: 0 22px 42px rgba(1, 28, 64, 0.16);
+  transform: translateY(-10px) rotate(-0.35deg);
+}
+
+.blog-card:hover::after,
+.blog-card:focus-within::after {
+  opacity: 1;
+}
+
+.blog-card .image-placeholder-blog {
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-card .image-placeholder-blog::after {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  content: "";
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-18deg);
+  transition: left 650ms ease;
+}
+
+.blog-card:hover .image-placeholder-blog::after,
+.blog-card:focus-within .image-placeholder-blog::after {
+  left: 140%;
+}
+
+.blog-card h3 a {
+  background: linear-gradient(var(--color-blue), var(--color-blue)) 0 100% / 0 2px no-repeat;
+  transition: color 250ms ease, background-size 350ms ease;
+}
+
+.blog-card:hover h3 a,
+.blog-card:focus-within h3 a {
+  color: var(--color-blue);
+  background-size: 100% 2px;
+}
+
+/* Small depth cues across the rest of the page. */
+.info-card:hover,
+.benefit-card:hover {
+  transform: translateY(-9px) rotate(0.25deg);
+}
+
+.info-card:hover .card-icon,
+.benefit-card:hover .card-icon {
+  transform: translateY(-3px) rotate(-7deg) scale(1.12);
+}
+
+.image-placeholder-doctor:hover img,
+.image-placeholder-family:hover img {
+  transform: scale(1.035);
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.clinic-map:hover {
+  box-shadow: 0 22px 42px rgba(1, 28, 64, 0.16), 0 0 0 4px rgba(38, 101, 140, 0.18);
+  transform: translateY(-7px) rotate(0.4deg);
+}
+
+.stat-item {
+  transition: background 250ms ease, transform 250ms ease, border-radius 250ms ease;
+}
+
+.stat-item:hover {
+  background: var(--color-cream);
+  border-radius: var(--radius-small);
+  transform: translateY(-4px);
+}
+
+.stat-item:hover strong {
+  color: var(--color-blue);
+}
+
+.faq-item {
+  transition: padding 250ms ease, background 250ms ease;
+}
+
+.faq-item:hover {
+  padding-inline: 0.9rem;
+  background: rgba(167, 235, 242, 0.12);
+}
+
+.slider-button {
+  transition: color 250ms ease, background 250ms ease, transform 250ms ease;
+}
+
+.slider-button:hover,
+.slider-button:focus-visible {
+  color: var(--color-white);
+  background: var(--color-deep-blue);
+  transform: scale(1.12);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .box-hover-effect,
   .box-hover-effect:hover,
   .box-hover-effect:hover .image-placeholder-blog {
     transition: none;
     transform: none;
+  }
+
+  .blog-card,
+  .blog-card:hover,
+  .info-card:hover,
+  .benefit-card:hover,
+  .clinic-map:hover,
+  .stat-item:hover,
+  .slider-button:hover {
+    transform: none;
+  }
+
+  .blog-card .image-placeholder-blog::after {
+    display: none;
   }
 }
 
