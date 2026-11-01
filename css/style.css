@@ -1,20 +1,20 @@
 :root {
-  --color-navy: #011c40;   /* Darkest color for the footer and strong headings */
-  --color-deep-blue: #023859;  /*Main button and important elements */
-  --color-blue: #26658c; /* link, Labels, and accents*/
-  --color-sky: #a7ebf2; /* light blue background and icons */
-  --color-cream: #fffaf4; /* Main websites background */
+  --color-navy: #123b5d;   /* Deep teal-navy for the footer and headings */
+  --color-deep-blue: #0f4c5c;  /* Main buttons and important elements */
+  --color-blue: #2a9d8f; /* Teal links, labels, and accents */
+  --color-sky: #bcefeb; /* Fresh mint highlight */
+  --color-cream: #fff9f2; /* Warm website background */
   --color-white: #ffffff; /* Cards, forms, and clean surfaces */
-  --color-peach: #f6c6b5; /* Warm decorative accent */
-  --color-peach-soft: #fff0e9; /*Soft peach section background */
-  --color-lavender: #e8e5f7; /* Soft Lavender section background */
-  --color-sage: #dcece6; /* Calm green decorative color */
-  --color-text: #18344d; /* Normal paragraph text */
+  --color-peach: #ff9f8f; /* Coral decorative accent */
+  --color-peach-soft: #fff0ec; /* Soft coral section background */
+  --color-lavender: #e8f5f3; /* Soft mint section background */
+  --color-sage: #dff3ec; /* Calm green decorative color */
+  --color-text: #1f3a4d; /* Normal paragraph text */
   --color-muted: #5e7181; /* Less important paragraph text */
-  --color-border: #dce6ec; /* Input and card borders */
+  --color-border: #d4e8e4; /* Input and card borders */
   --color-error: #b33a3a; /* Form error messages */
-  --shadow-soft: 0 18px 45px rgba(1, 28, 64, 0.1); /* Soft shadow for large sections */
-  --shadow-card: 0 10px 28px rgba(1, 28, 64, 0.08); /* Smaller shodow for cards */
+  --shadow-soft: 0 18px 45px rgba(18, 59, 93, 0.12); /* Soft shadow for large sections */
+  --shadow-card: 0 10px 28px rgba(18, 59, 93, 0.09); /* Smaller shadow for cards */
   --radius-small: 0.75rem; /* Small rounded corners */
   --radius-medium: 1.25rem; /* Medium rounded corners*/
   --radius-large: 2rem; /* Large rounded corners */
@@ -81,8 +81,8 @@ html {
 
 body {
     margin: 0;
-    color:#18344d;
-    background:#fffaf4;
+    color:var(--color-text);
+    background:var(--color-cream);
     font-family:Arial, Helvetica, sans-serif;
     font-size:1rem;
     line-height: 1.6;
@@ -155,7 +155,7 @@ button {
 }
 
 .section-soft {
-    background: #f1faf9;
+  background: #eefaf7;
 }
 
 .section-lavender {
@@ -217,8 +217,8 @@ p {
   position: sticky;
   z-index: 10;
   top: 0;
-  background: rgba(255, 250, 244, 0.94);
-  border-bottom: 1px solid rgba(220, 230, 236, 0.8);
+  background: rgba(255, 249, 242, 0.94);
+  border-bottom: 1px solid rgba(212, 232, 228, 0.85);
   backdrop-filter: blur(14px);
 }
 
@@ -350,7 +350,7 @@ p {
   position: relative;
   overflow: hidden;
   padding: 7rem 0 6.5rem;
-  background: linear-gradient(135deg, #eaf8f8 0%, var(--color-cream) 52%, #fff0e9 100%);
+  background: linear-gradient(135deg, #e8faf8 0%, var(--color-cream) 52%, #fff0ec 100%);
 }
 
 .hero::before,
@@ -497,7 +497,7 @@ p {
   position: absolute;
   inset: 1rem 0 0 2rem;
   min-height: 29rem;
-  background: linear-gradient(160deg, #d6f4f4, #f7d8cb);
+  background: linear-gradient(160deg, #c9f3ef, #ffd8cf);
   border: 0;
   border-radius: 45% 45% 1.75rem 1.75rem;
   box-shadow: var(--shadow-soft);
@@ -704,7 +704,7 @@ p {
   overflow: hidden;
   min-height: 24rem;
   color: var(--color-blue);
-  background-color: #dcece6;
+  background-color: var(--color-sage);
   background-image:
     linear-gradient(28deg, transparent 47%, rgba(255, 255, 255, 0.75) 48%, rgba(255, 255, 255, 0.75) 52%, transparent 53%),
     linear-gradient(115deg, transparent 46%, rgba(255, 255, 255, 0.6) 47%, rgba(255, 255, 255, 0.6) 51%, transparent 52%),
